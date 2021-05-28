@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Virtual Library</string>
+    <string name="add_fab_explanation">Add a new book</string>
+    <string name="title_label">Title</string>
+    <string name="author_label">Author</string>
+    <string name="publication_year_label">Publication year</string>
+    <string name="save_fab_explanation">Save your book</string>
+    <string name="isbn_label">ISBN</string>
+    <string name="isbn_explanation">ISBN definition</string>
+    <string name="cover_photo_explanation">This is a photo of your book\'s front cover</string>
+    <string name="scan_barcode">Scan barcode</string>
 </resources>
