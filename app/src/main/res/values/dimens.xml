@@ -2,4 +2,7 @@
 <resources>
     <dimen name="margin_side">16dp</dimen>
     <dimen name="margin_top">16dp</dimen>
+    <dimen name="book_title_text_size">24sp</dimen>
+    <dimen name="book_author_text_size">20sp</dimen>
+    <dimen name="margin_after_bookcover">24dp</dimen>
 </resources>
