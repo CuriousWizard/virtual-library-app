@@ -2,7 +2,7 @@
     <string name="app_name">My Virtual Library</string>
     <string name="add_fab_explanation">Add a new book</string>
     <string name="title_label">Title</string>
-    <string name="author_label">Author</string>
+    <string name="authors_label">Authors</string>
     <string name="year_label">Year</string>
     <string name="save_fab_explanation">Save your book</string>
     <string name="isbn_label">ISBN</string>
