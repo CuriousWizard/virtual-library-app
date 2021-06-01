@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.curiouswizard.myvirtuallibrary.ui.AddViewModel" />
     </data>
 
@@ -50,8 +50,10 @@
             app:layout_constraintTop_toBottomOf="@+id/bookCoverImageButton">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleEditTextField"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.title}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,19 +65,21 @@
             android:layout_marginStart="@dimen/margin_side"
             android:layout_marginTop="@dimen/margin_top"
             android:layout_marginEnd="@dimen/margin_side"
-            android:hint="@string/author_label"
+            android:hint="@string/authors_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleTextField">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/authorEditTextField"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.authors}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dateTextField"
+            android:id="@+id/yearTextField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,12 +89,16 @@
             android:hint="@string/year_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/authorTextField">
+            app:layout_constraintTop_toBottomOf="@+id/authorTextField"
+            app:counterEnabled="true"
+            app:counterMaxLength="4">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/yearEditTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date" />
+                android:inputType="date"
+                android:text="@{viewModel.yearString}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,15 +113,19 @@
             android:hint="@string/isbn_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateTextField"
+            app:layout_constraintTop_toBottomOf="@+id/yearTextField"
+            app:counterEnabled="true"
+            app:counterMaxLength="13"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_help_24"
             app:endIconContentDescription="@string/isbn_explanation">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/isbnEditTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date" />
+                android:inputType="number"
+                android:text="@{viewModel.isbn}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
