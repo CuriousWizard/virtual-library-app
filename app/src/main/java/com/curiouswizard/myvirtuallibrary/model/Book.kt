@@ -8,9 +8,10 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity(tableName = "books_table")
 data class Book(
-    @PrimaryKey(autoGenerate = true) val id: Long,
-    val isbn: String,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
+    val isbn: String?,
     val authors: String,
     val title: String,
-    val year: Short
+    val year: Short,
+    val coverPhoto: String?
 ): Parcelable
