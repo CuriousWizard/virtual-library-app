@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.curiouswizard.myvirtuallibrary.ui.AddViewModel" />
@@ -14,120 +15,133 @@
         android:layout_height="match_parent"
         tools:context=".ui.AddFragment">
 
-        <ImageButton
-            android:id="@+id/bookCoverImageButton"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginTop="@dimen/margin_top"
-            android:contentDescription="@string/cover_photo_explanation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/scanButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginEnd="@dimen/margin_side"
-            android:text="@string/scan_barcode"
-            app:layout_constraintBottom_toBottomOf="@+id/bookCoverImageButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bookCoverImageButton"
-            app:layout_constraintTop_toTopOf="@+id/bookCoverImageButton" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/titleTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top"
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginEnd="@dimen/margin_side"
-            android:hint="@string/title_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookCoverImageButton">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/titleEditTextField"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.title}"/>
+                tools:context=".ui.AddFragment">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/bookCoverImageButton"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="@dimen/margin_side"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:background="@color/cardview_dark_background"
+                    android:contentDescription="@string/cover_photo_explanation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:loadBookCoverPhoto="@{viewModel.scannedBook.coverPhoto}" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/authorTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginTop="@dimen/margin_top"
-            android:layout_marginEnd="@dimen/margin_side"
-            android:hint="@string/authors_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextField">
+                <Button
+                    android:id="@+id/scanButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_side"
+                    android:layout_marginEnd="@dimen/margin_side"
+                    android:text="@string/scan_barcode"
+                    app:layout_constraintBottom_toBottomOf="@+id/bookCoverImageButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/bookCoverImageButton"
+                    app:layout_constraintTop_toTopOf="@+id/bookCoverImageButton" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/authorEditTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{viewModel.authors}"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/titleTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_side"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:layout_marginEnd="@dimen/margin_side"
+                    android:hint="@string/title_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bookCoverImageButton">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/titleEditTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.title}" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/yearTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginTop="@dimen/margin_top"
-            android:layout_marginEnd="@dimen/margin_side"
-            android:hint="@string/year_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/authorTextField"
-            app:counterEnabled="true"
-            app:counterMaxLength="4">
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/yearEditTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="date"
-                android:text="@{viewModel.yearString}"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/authorTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_side"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:layout_marginEnd="@dimen/margin_side"
+                    android:hint="@string/authors_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTextField">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/authorEditTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.authors}" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/isbnTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginTop="@dimen/margin_top"
-            android:layout_marginEnd="@dimen/margin_side"
-            android:hint="@string/isbn_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/yearTextField"
-            app:counterEnabled="true"
-            app:counterMaxLength="13"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_help_24"
-            app:endIconContentDescription="@string/isbn_explanation">
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/isbnEditTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="@{viewModel.isbn}"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/yearTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_side"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:layout_marginEnd="@dimen/margin_side"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/authorTextField">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                    <AutoCompleteTextView
+                        android:id="@+id/yearListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:dropDownHeight="160dp"
+                        android:hint="@string/year_label"
+                        android:inputType="date"
+                        android:text="@={viewModel.year}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/isbnTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_side"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/margin_side"
+                    android:hint="@string/isbn_label"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="13"
+                    app:endIconContentDescription="@string/isbn_explanation"
+                    app:endIconDrawable="@drawable/ic_help_24"
+                    app:endIconMode="custom"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/yearTextField">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/isbnEditTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="@={viewModel.isbn}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_save"
@@ -141,4 +155,5 @@
             app:srcCompat="@drawable/ic_save_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
