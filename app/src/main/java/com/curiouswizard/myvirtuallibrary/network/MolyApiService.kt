@@ -5,7 +5,7 @@ import com.curiouswizard.myvirtuallibrary.model.BookEditions
 import com.curiouswizard.myvirtuallibrary.model.NetworkBook
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -25,8 +25,17 @@ private val retrofitJson = Retrofit.Builder()
  * Retrofit interface for JSON parse using Moshi
  */
 interface MolyApiJsonService {
+
+    /**
+     * Returning as Response<Network> to be able to check response metadata.
+     * For more info check:
+     * https://github.com/square/retrofit/blob/master/CHANGELOG.md#version-260-2019-06-05
+     */
     @GET("book_by_isbn.json")
-    fun getBookByIsbn(@Query("q") isbn: String, @Query("key") apiKey: String): Call<NetworkBook>
+    suspend fun getBookByIsbn(
+        @Query("q") isbn: String,
+        @Query("key") apiKey: String
+    ): Response<NetworkBook>
 
     @GET("book_editions/{id}.json")
     suspend fun getBookEditionYear(
@@ -41,3 +50,4 @@ object MolyApi {
         retrofitJson.create(MolyApiJsonService::class.java)
     }
 }
+

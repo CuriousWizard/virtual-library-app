@@ -19,10 +19,10 @@ data class BookEditions(
 @Parcelize
 data class BookEdition (
     val id: Int,
-    val isbn: String? = null,
+    val isbn: String,
     val publisher: String,
     val place: String,
-    val year: UInt,
-    val pages: UShort,
-    val cover: String
+    val year: Int,
+    @Transient val pages: Short = 0,
+    val cover: String?
 ): Parcelable
