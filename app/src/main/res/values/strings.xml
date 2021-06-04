@@ -5,9 +5,12 @@
     <string name="authors_label">Authors</string>
     <string name="year_label">Year</string>
     <string name="save_fab_explanation">Save your book</string>
-    <string name="isbn_label">ISBN</string>
+    <string name="isbn_label">ISBN (optional)</string>
     <string name="isbn_explanation">ISBN definition</string>
     <string name="cover_photo_explanation">This is a photo of your book\'s front cover</string>
     <string name="scan_barcode">Scan barcode</string>
     <string name="edit_fab_explanation">Edit details of this book</string>
+    <string name="empty_author">Please enter the book\'s authors.</string>
+    <string name="empty_title">Please enter the book\'s title.</string>
+    <string name="empty_year">Please enter your book\'s year of issue</string>
 </resources>
