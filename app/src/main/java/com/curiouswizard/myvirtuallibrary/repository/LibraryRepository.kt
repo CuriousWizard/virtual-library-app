@@ -18,16 +18,15 @@ class LibraryRepository(private val database: AppDatabase) {
     private var actualIsbn: String = ""
     private var networkBook: NetworkBook? = null
 
+
     suspend fun getBookInfo(isbn: String) {
         getNetworkBook(isbn, true)
         if (networkBook != null) {
             val editions = getBookEditions(networkBook!!.id)
             val yearsList: MutableList<String> = mutableListOf()
-            var cover: String? = ""
             for (edition in editions.editions) {
                 if (actualIsbn == edition.isbn) {
                     yearsList.add(edition.year.toString())
-                    if(cover.isNullOrEmpty()) cover = edition.cover
                 }
             }
 
@@ -39,7 +38,7 @@ class LibraryRepository(private val database: AppDatabase) {
                     networkBook!!.author,
                     networkBook!!.title,
                     0,
-                    cover
+                    networkBook!!.cover.replace("normal", "big")
                 )
             )
         }
@@ -80,6 +79,10 @@ class LibraryRepository(private val database: AppDatabase) {
                 }
             }
         }
+    }
+
+    suspend fun editBookById(book: Book){
+        database.bookDao.editBookById(book)
     }
 
     private suspend fun getBookEditions(id: Int): BookEditions =
