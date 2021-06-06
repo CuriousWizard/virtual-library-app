@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.curiouswizard.myvirtuallibrary.Constants.SCANNED_ISBN_EXTRA
 import com.curiouswizard.myvirtuallibrary.R
 import com.curiouswizard.myvirtuallibrary.camera.CameraActivity
@@ -60,9 +61,18 @@ class AddFragment : Fragment() {
         })
 
         viewModel.years.observe(viewLifecycleOwner, {
-            val adapter = ArrayAdapter(requireContext(), R.layout.year_list_item, it)
-            (binding.yearListView as? AutoCompleteTextView)?.setAdapter(adapter)
-            binding.yearListView.setText(it[0].substring(0,2))
+            if(it.isNotEmpty()){
+                val adapter = ArrayAdapter(requireContext(), R.layout.year_list_item, it)
+                (binding.yearListView as? AutoCompleteTextView)?.setAdapter(adapter)
+                binding.yearListView.setText(it[0].substring(0,2))
+            }
+        })
+
+        viewModel.navigateBack.observe(viewLifecycleOwner,{
+            it?.let {
+                findNavController().navigateUp()
+                viewModel.doneNavigating()
+            }
         })
 
         binding.isbnTextField.setEndIconOnClickListener {

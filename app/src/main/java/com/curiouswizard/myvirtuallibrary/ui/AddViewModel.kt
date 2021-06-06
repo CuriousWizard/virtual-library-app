@@ -2,10 +2,7 @@ package com.curiouswizard.myvirtuallibrary.ui
 
 import android.app.Application
 import android.content.Context
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.curiouswizard.myvirtuallibrary.R
 import com.curiouswizard.myvirtuallibrary.database.getDatabase
 import com.curiouswizard.myvirtuallibrary.model.Book
@@ -28,6 +25,10 @@ class AddViewModel(application: Application): ViewModel() {
     val authors: MutableLiveData<String> = MutableLiveData("")
     val year: MutableLiveData<String> = MutableLiveData("")
     val isbn: MutableLiveData<String> = MutableLiveData("")
+
+    // Encapsulated LiveData to handle navigation properly
+    private val _navigateBack = MutableLiveData<Boolean?>()
+    val navigateBack: LiveData<Boolean?> = _navigateBack
 
 
     fun getBookInfo(isbn: String) = viewModelScope.launch {
@@ -62,7 +63,16 @@ class AddViewModel(application: Application): ViewModel() {
                 scannedBook.value?.coverPhoto
             )
             libraryRepository.saveBookToDatabase(book)
+            navigateBackToList()
         }
+    }
+
+    fun navigateBackToList() {
+        _navigateBack.value = true
+    }
+
+    fun doneNavigating() {
+        _navigateBack.value = null
     }
 
     /**

@@ -25,12 +25,13 @@
                 tools:context=".ui.AddFragment">
 
                 <ImageView
-                    android:id="@+id/bookCoverImageButton"
+                    android:id="@+id/bookCoverImage"
                     android:layout_width="150dp"
                     android:layout_height="200dp"
                     android:layout_marginStart="@dimen/margin_side"
                     android:layout_marginTop="@dimen/margin_top"
-                    android:background="@color/cardview_dark_background"
+                    android:padding="@dimen/padding_photo"
+                    android:scaleType="center"
                     android:contentDescription="@string/cover_photo_explanation"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -43,10 +44,10 @@
                     android:layout_marginStart="@dimen/margin_side"
                     android:layout_marginEnd="@dimen/margin_side"
                     android:text="@string/scan_barcode"
-                    app:layout_constraintBottom_toBottomOf="@+id/bookCoverImageButton"
+                    app:layout_constraintBottom_toBottomOf="@+id/bookCoverImage"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/bookCoverImageButton"
-                    app:layout_constraintTop_toTopOf="@+id/bookCoverImageButton" />
+                    app:layout_constraintStart_toEndOf="@+id/bookCoverImage"
+                    app:layout_constraintTop_toTopOf="@+id/bookCoverImage" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/titleTextField"
@@ -59,7 +60,7 @@
                     android:hint="@string/title_label"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/bookCoverImageButton">
+                    app:layout_constraintTop_toBottomOf="@+id/bookCoverImage">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/titleEditTextField"
