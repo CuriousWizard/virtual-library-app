@@ -16,20 +16,23 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="175dp"
-            android:layout_height="225dp"
+            android:layout_width="275dp"
+            android:layout_height="350dp"
             android:layout_marginTop="@dimen/margin_top"
+            android:padding="@dimen/padding_photo"
+            android:scaleType="center"
+            app:loadBookCoverPhoto="@{book.coverPhoto}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="@color/cardview_dark_background"
             android:contentDescription="@string/cover_photo_explanation" />
 
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_side"
+            android:paddingStart="@dimen/margin_side"
+            android:paddingEnd="@dimen/margin_top"
             android:layout_marginTop="@dimen/margin_after_bookcover"
             android:text="@{book.title}"
             android:textSize="@dimen/book_title_text_size"
@@ -41,22 +44,22 @@
             android:id="@+id/authorsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_side"
             android:layout_marginTop="@dimen/margin_top"
+            android:paddingStart="@dimen/margin_side"
+            android:paddingEnd="@dimen/margin_top"
             android:text="@{book.authors}"
             android:textSize="@dimen/book_author_text_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-            tools:text="Authors"/>
-
+            tools:text="Authors" />
 
         <TextView
             android:id="@+id/yearTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text='@{book.year +" • ISBN:"+ book.isbn}'
-            android:layout_marginStart="@dimen/margin_side"
-            android:layout_marginEnd="@dimen/margin_side"
+            android:paddingStart="@dimen/margin_side"
+            android:paddingEnd="@dimen/margin_top"
             android:layout_marginTop="@dimen/margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/authorsTextView"

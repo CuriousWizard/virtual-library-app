@@ -5,5 +5,9 @@
     <dimen name="book_title_text_size">24sp</dimen>
     <dimen name="book_author_text_size">20sp</dimen>
     <dimen name="margin_after_bookcover">24dp</dimen>
-    <dimen name="book_cover_photo_height">200dp</dimen>
+    <dimen name="book_cover_photo_height">230dp</dimen>
+    <dimen name="padding_photo">4dp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="book_item_text_padding">4dp</dimen>
+    <dimen name="book_item_margin">8dp</dimen>
 </resources>
