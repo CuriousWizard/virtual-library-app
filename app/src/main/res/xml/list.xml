@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- A transition describes an animation via start and end state -->
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="1500">
+        <OnClick
+            app:targetId="@id/noDataImage"
+            app:clickAction="toggle" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="10"
+                app:motionTarget="@id/noDataImage"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.47"
+                />
+            <KeyAttribute
+                app:framePosition="10"
+                app:motionTarget="@id/noDataImage"
+                android:rotation="0"
+                />
+            <KeyAttribute
+                app:framePosition="26"
+                app:motionTarget="@id/noDataImage"
+                android:rotation="15"
+                />
+            <KeyAttribute
+                app:framePosition="42"
+                app:motionTarget="@id/noDataImage"
+                android:rotation="-30"
+                />
+            <KeyAttribute
+                app:framePosition="58"
+                app:motionTarget="@id/noDataImage"
+                android:rotation="30"
+                />
+            <KeyAttribute
+                app:framePosition="74"
+                app:motionTarget="@id/noDataImage"
+                android:rotation="-30"
+                />
+            <KeyPosition
+                app:framePosition="90"
+                app:motionTarget="@id/noDataImage"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.47"
+                />
+            <KeyAttribute
+                app:framePosition="90"
+                app:motionTarget="@id/noDataImage"
+                android:rotation="0"
+                />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- Constraints to apply at the beginning of the animation -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/noDataImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <!-- Constraints to apply at the end of the animation -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/noDataImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+</MotionScene>
