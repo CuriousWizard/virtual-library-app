@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="book"
+            type="com.curiouswizard.myvirtuallibrary.model.Book" />
+        
+        <variable
+            name="clickListener"
+            type="com.curiouswizard.myvirtuallibrary.ui.BookListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(book)}"
+        android:layout_margin="@dimen/book_item_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/book_cover_photo_height"
+                android:scaleType="center"
+                app:loadBookCoverPhoto="@{book.coverPhoto}"
+                android:contentDescription="@string/cover_photo_explanation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/book_item_text_padding"
+                android:paddingEnd="@dimen/book_item_text_padding"
+                android:text="@{book.title}"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="@dimen/book_item_text_padding"
+                android:paddingEnd="@dimen/book_item_text_padding"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{book.authors}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
