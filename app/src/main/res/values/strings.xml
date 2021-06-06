@@ -13,4 +13,6 @@
     <string name="empty_author">Please enter the book\'s authors.</string>
     <string name="empty_title">Please enter the book\'s title.</string>
     <string name="empty_year">Please enter your book\'s year of issue</string>
+    <string name="no_data">No data</string>
+    <string name="no_data_icon_description">This is an icon indicating that there are no data</string>
 </resources>
