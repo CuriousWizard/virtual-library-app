@@ -17,7 +17,6 @@ class EditViewModel(application: Application) : ViewModel() {
     val snackbarMessageInt: MutableLiveData<Int> = MutableLiveData()
     val book: MutableLiveData<Book> = MutableLiveData()
 
-    val photo: MutableLiveData<String> = MutableLiveData()
     val title: MutableLiveData<String> = MutableLiveData()
     val authors: MutableLiveData<String> = MutableLiveData()
     val year: MutableLiveData<String> = MutableLiveData()
@@ -28,7 +27,6 @@ class EditViewModel(application: Application) : ViewModel() {
     val navigateBack: LiveData<Boolean?> = _navigateBack
 
     fun setup() {
-        photo.value = book.value?.coverPhoto
         title.value = book.value?.title
         authors.value = book.value?.authors
         year.value = book.value?.year.toString()
