@@ -45,7 +45,7 @@ class ListFragment: Fragment() {
         viewModel.navigateToDetails.observe(viewLifecycleOwner, { book ->
             book?.let {
                 this.findNavController().navigate(
-                    ListFragmentDirections.toDetailFragment(book)
+                    ListFragmentDirections.toDetailFragment(book.id)
                 )
                 viewModel.doneNavigating()
             }

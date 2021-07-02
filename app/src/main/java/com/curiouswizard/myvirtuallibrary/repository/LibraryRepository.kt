@@ -91,4 +91,8 @@ class LibraryRepository(private val database: AppDatabase) {
     suspend fun saveBookToDatabase(book: Book) {
         database.bookDao.insert(book)
     }
+
+    suspend fun getBookById(id: Long): Book {
+        return database.bookDao.getBook(id)
+    }
 }

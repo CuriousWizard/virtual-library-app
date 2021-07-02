@@ -31,8 +31,8 @@
             android:id="@+id/to_editFragment"
             app:destination="@id/editFragment" />
         <argument
-            android:name="selectedBook"
-            app:argType="com.curiouswizard.myvirtuallibrary.model.Book" />
+            android:name="id"
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/editFragment"
