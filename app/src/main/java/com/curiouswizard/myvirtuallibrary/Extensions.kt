@@ -19,7 +19,7 @@ fun View.fadeIn() {
 fun View.fadeOut() {
     this.animate().alpha(0f).setListener(object : AnimatorListenerAdapter() {
         override fun onAnimationEnd(animation: Animator) {
-            this@fadeOut.alpha = 1f
+            this@fadeOut.alpha = 0f
             this@fadeOut.visibility = View.GONE
         }
     })

@@ -62,24 +62,14 @@ class ListFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.books.observe(viewLifecycleOwner, { list ->
             list?.apply {
+                viewModel.invalidateNoDataIndicators()
                 adapter?.books = list
-                invalidateNoData()
             }
         })
     }
 
     override fun onResume() {
         super.onResume()
-        invalidateNoData()
-    }
-
-    private fun invalidateNoData(){
-        if (viewModel.books.value.isNullOrEmpty()){
-            binding.noDataImage.visibility = View.VISIBLE
-            binding.noDataTextView.visibility = View.VISIBLE
-        } else {
-            binding.noDataImage.visibility = View.INVISIBLE
-            binding.noDataTextView.visibility = View.INVISIBLE
-        }
+        viewModel.invalidateNoDataIndicators()
     }
 }

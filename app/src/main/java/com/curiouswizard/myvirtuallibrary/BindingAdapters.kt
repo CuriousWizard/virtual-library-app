@@ -40,17 +40,18 @@ object BindingAdapters{
             img.tag = true
             img.visibility = if (visible == true) View.VISIBLE else View.GONE
         } else {
-            img.animate().cancel()
             if (visible == true) {
-                if (img.visibility == View.GONE)
+                if (img.visibility == View.GONE) {
+                    img.animate().cancel()
                     img.clearFocus()
                     img.fadeIn()
+                }
             } else {
                 if (img.visibility == View.VISIBLE){
+                    img.animate().cancel()
                     img.clearFocus()
                     img.fadeOut()
                 }
-
             }
         }
     }
@@ -58,7 +59,7 @@ object BindingAdapters{
     /**
      * Use this binding adapter to show and hide the views using boolean variables
      */
-    @BindingAdapter("fadeVisible")
+    @BindingAdapter("android:fadeVisible")
     @JvmStatic
     fun setFadeVisible(view: View, visible: Boolean? = true) {
         if (view.tag == null) {

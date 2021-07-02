@@ -67,6 +67,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/noDataTextView"
+            app:layout_constraintEnd_toEndOf="@id/noDataImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/noDataImage"
+            app:layout_constraintStart_toStartOf="@id/noDataImage"
+            android:visibility="visible" />
     </ConstraintSet>
 
     <!-- Constraints to apply at the end of the animation -->
@@ -79,6 +87,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/noDataTextView"
+            app:layout_constraintEnd_toEndOf="@id/noDataImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/noDataImage"
+            app:layout_constraintStart_toStartOf="@id/noDataImage"
+            android:visibility="visible" />
     </ConstraintSet>
 
 </MotionScene>

@@ -29,13 +29,9 @@ class ListViewModel(application: Application): ViewModel() {
         _navigateToDetails.value = null
     }
 
-    private fun invalidateShowNoData() {
+    fun invalidateNoDataIndicators() {
         showNoData.value = books.value == null || books.value!!.isEmpty()
         showNoDataImg.value = books.value == null || books.value!!.isEmpty()
-    }
-
-    fun loadBooks() {
-        invalidateShowNoData()
     }
 
     /**
