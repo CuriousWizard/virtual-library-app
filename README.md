@@ -23,6 +23,14 @@ Here is a little tutorial what should you
 3. Enable "install unknown apps" and install the app
 4. Start the application and enjoy it!
 
+**OR** if you want to use this source code:
+- Get API key from Moly.hu website
+- Create an "apikey.properties" file
+- Copy and paste the following line:
+```
+moly_api_key="YOUR_API_KEY"
+```
+
 ## Built With
 
 * [Retrofit](https://square.github.io/retrofit/) to make api calls to an HTTP web service.
