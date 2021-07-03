@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -77,7 +78,7 @@ class AddFragment : Fragment() {
 
         binding.isbnTextField.setEndIconOnClickListener {
             // Respond to help icon press
-            // TODO: Create a AlertDialog for explaining what is ISBN
+            displayIsbnExplanationDialog()
         }
 
         binding.fabSave.setOnClickListener {
@@ -87,4 +88,10 @@ class AddFragment : Fragment() {
         return binding.root
     }
 
+    private fun displayIsbnExplanationDialog(){
+        val builder = AlertDialog.Builder(requireActivity())
+            .setMessage(getString(R.string.isbn_explanation))
+            .setPositiveButton(android.R.string.ok, null)
+        builder.create().show()
+    }
 }

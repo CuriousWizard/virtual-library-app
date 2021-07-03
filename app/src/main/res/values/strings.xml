@@ -6,13 +6,17 @@
     <string name="year_label">Year</string>
     <string name="save_fab_explanation">Save your book</string>
     <string name="isbn_label">ISBN (optional)</string>
-    <string name="isbn_explanation">ISBN definition</string>
+    <string name="isbn_explanation">ISBN is the short form of International Standard Book Number which you can only find this on books released after 1970.\nThere are two types of ISBN: ISBN-10 and ISBN-13. If you want to convert your 10 digit ISBN, just add the 978 prefix.</string>
     <string name="cover_photo_explanation">This is a photo of your book\'s front cover</string>
     <string name="scan_barcode">Scan barcode</string>
     <string name="edit_fab_explanation">Edit details of this book</string>
     <string name="empty_author">Please enter the book\'s authors.</string>
     <string name="empty_title">Please enter the book\'s title.</string>
     <string name="empty_year">Please enter your book\'s year of issue</string>
-    <string name="no_data">No data</string>
+    <string name="no_books_added_yet">No books added yet</string>
     <string name="no_data_icon_description">This is an icon indicating that there are no data</string>
+    <string name="my_library">My virtual library</string>
+    <string name="add_new_book">Add new book</string>
+    <string name="your_book_details">Details of your book</string>
+    <string name="edit_book">Edit book</string>
 </resources>

@@ -19,13 +19,13 @@
             android:layout_width="275dp"
             android:layout_height="350dp"
             android:layout_marginTop="@dimen/margin_top"
+            android:contentDescription="@string/cover_photo_explanation"
             android:padding="@dimen/padding_photo"
             android:scaleType="center"
-            app:loadBookCoverPhoto="@{book.coverPhoto}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/cover_photo_explanation" />
+            app:loadBookCoverPhoto="@{book.coverPhoto}" />
 
         <TextView
             android:id="@+id/titleTextView"
