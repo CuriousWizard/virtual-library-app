@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.curiouswizard.myvirtuallibrary.ui.ListFragment"
-        android:label="fragment_list"
+        android:label="@string/my_library"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_addFragment"
@@ -20,12 +20,12 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.curiouswizard.myvirtuallibrary.ui.AddFragment"
-        android:label="fragment_add"
+        android:label="@string/add_new_book"
         tools:layout="@layout/fragment_add" />
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.curiouswizard.myvirtuallibrary.ui.DetailFragment"
-        android:label="fragment_detail"
+        android:label="@string/your_book_details"
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/to_editFragment"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/editFragment"
         android:name="com.curiouswizard.myvirtuallibrary.ui.EditFragment"
-        android:label="fragment_edit"
+        android:label="@string/edit_book"
         tools:layout="@layout/fragment_edit" >
         <argument
             android:name="selectedBook"
