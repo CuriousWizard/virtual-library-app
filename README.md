@@ -1,12 +1,19 @@
 # My Virtual Library
-My Virtual Library application is my final project for Udacity's Android Kotlin Developer Nanodegree Program to demonstrate core Android Development skills.
+This application is my final project for Udacity's Android Kotlin Developer Nanodegree Program to demonstrate core Android Development skills. My goal was to create an app which allows users to add books to a list by scanning its barcode or enter its detail manually, and stores that list in a database.
 
-The goal: Create an app which allows users to add books to a list by scanning its barcode or enter its detail manually, and stores that list in a database.
-
-For more features please check docs folder.
+**Please note:** This application uses Moly.hu as the remote database. It can occur that you can't find your book using barcode scanning feature.
+For more features please check docs.
 
 ## Screenshots
-
+<p align="center">
+<img src=screenshots/Screenshot_20210702-225442.jpg width=30% height=30%>
+<img src=screenshots/Screenshot_20210702-231110.jpg width=30% height=30%>
+<img src=screenshots/Screenshot_20210703-121620.jpg width=30% height=30%>
+</p>
+<p align="center">
+<img src=screenshots/Screenshot_20210702-231129.jpg width=30% height=30%>
+<img src=screenshots/Screenshot_20210702-231141.jpg width=30% height=30%>
+</p>
 
 ## Getting started
 Here is a little tutorial what should you 
