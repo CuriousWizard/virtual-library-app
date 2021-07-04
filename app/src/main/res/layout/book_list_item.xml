@@ -25,7 +25,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/book_cover_photo_height"
+                android:layout_height="@dimen/item_cover_photo_height"
                 android:scaleType="center"
                 app:loadBookCoverPhoto="@{book.coverPhoto}"
                 android:contentDescription="@string/cover_photo_explanation" />
@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/book_item_margin_top"
                 android:paddingStart="@dimen/book_item_text_padding"
                 android:paddingEnd="@dimen/book_item_text_padding"
                 android:maxLines="1"

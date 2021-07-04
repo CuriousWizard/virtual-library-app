@@ -25,8 +25,8 @@
 
                 <ImageView
                     android:id="@+id/bookCoverImage"
-                    android:layout_width="150dp"
-                    android:layout_height="200dp"
+                    android:layout_width="@dimen/preview_book_cover_width"
+                    android:layout_height="@dimen/preview_book_cover_height"
                     android:layout_marginTop="@dimen/margin_top"
                     android:contentDescription="@string/cover_photo_explanation"
                     android:padding="@dimen/padding_photo"
@@ -106,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_side"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/add_isbn_margin_top"
                     android:layout_marginEnd="@dimen/margin_side"
                     android:hint="@string/isbn_label"
                     app:counterEnabled="true"

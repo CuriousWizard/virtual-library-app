@@ -17,16 +17,6 @@ import com.curiouswizard.myvirtuallibrary.model.Book
 class BookGridAdapter(private val clickListener: BookListener) :
     ListAdapter<Book, BookGridAdapter.BookViewHolder>(DiffCallback) {
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Book>() {
-        override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
-            return oldItem === newItem
-        }
-
-        override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
-            return oldItem.id == newItem.id
-        }
-    }
-
     var books: List<Book> = emptyList()
         set(value) {
             field = value
@@ -58,6 +48,16 @@ class BookGridAdapter(private val clickListener: BookListener) :
         companion object {
             @LayoutRes
             val LAYOUT = R.layout.book_list_item
+        }
+    }
+
+    companion object DiffCallback : DiffUtil.ItemCallback<Book>() {
+        override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
+            return oldItem === newItem
+        }
+
+        override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
+            return oldItem.id == newItem.id
         }
     }
 }
